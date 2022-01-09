@@ -1,0 +1,70 @@
+{
+  "name": "carrot",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^0.10.0"
+  },
+  "displayName": "Write Carrot (DSL for product managers) faster",
+  "description": "Code snippets to write features, scenarios and PRDs faster + Syntax highlight for .feature files",
+  "publisher": "talvinder",
+  "icon": "images/logo.png",
+  "galleryBanner": {
+    "color": "#512DA8",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/talvinder/vscode-carrot/issues"
+  },
+  "homepage": "https://github.com/talvinder/vscode-carrot/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talvinder/vscode-carrot.git"
+  },
+  "categories": [
+    "Snippets",
+    "Programming Languages",
+    "Formatters"
+  ],
+  "keywords": [
+    "gherkin",
+    "carrot",
+    "cucumber",
+    "snippet",
+    "template",
+    "syntax highlight"
+  ],
+  "activationEvents": [
+    "onLanguage:feature"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "feature",
+        "aliases": [
+          "Gherkin",
+          "feature"
+        ],
+        "extensions": [
+          ".feature"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "feature",
+        "scopeName": "text.gherkin.feature",
+        "path": "./syntaxes/feature.tmLanguage",
+        "injectTo": [
+          "text.html.markdown"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "feature",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}
